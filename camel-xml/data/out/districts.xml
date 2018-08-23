@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Distritos>
+    <district>
+        <name>Parova</name>
+        <inhabitants>57525</inhabitants>
+    </district>
+    <district>
+        <name>Parova2</name>
+        <inhabitants>46015</inhabitants>
+    </district>
+    <district>
+        <name>Parova3</name>
+        <inhabitants>46020</inhabitants>
+    </district>
+    <district>
+        <name>Parova4</name>
+        <inhabitants>92040</inhabitants>
+    </district>
+</Distritos>

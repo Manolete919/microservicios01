@@ -1,0 +1,29 @@
+https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+git config --global --get http.proxy
+
+git config --list --global --show-origin
+
+git config --global -l
+
+git config --global --get user.name
+
+git config --global --unset user.name
+
+git config --global --unset user.email
+git config --global --unset user.mail
+
+git config --global --get user.mail
+
+
+git config –global http.proxy http://user:password@domain/reposiroty.git
+  
+
+echo "# microservicios01" >> README.md
+git init .
+git add .
+git commit -m "Capacitacion Sud"
+git remote add origin https://github.com/Manolete919/microservicios01.git
+git push -u origin master

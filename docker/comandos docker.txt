@@ -1,0 +1,271 @@
+INSTALAR REDIS EN DOCKER
+https://linuxhint.com/install-redis-from-docker-hub/
+
+ 
+
+
+docker ps
+
+HACER BINDING DE LA IMAGEN
+
+docker run --rm --name redis-qkw -p 6379:6379 redis
+
+
+docker run -it --link qkw-redis:redis --rm redis redis-cli -h redis -p 6379
+
+
+started machines may have new ip addresses yu  nay need to re-run docker-mchin env command
+
+docker run --rm --name redis-qkw -p 6379:6379 redis
+
+PROBAR REDIS
+
+docker exec -ti redis-qkw /bin/bash
+
+witch made 
+ 
+
+################################
+#redis-cli
+ver donde esta instalado "redis-cli"
+ find -name red*
+
+
+# ejemplo de instalacion mv composer.phar /usr/local/bin/composer
+
+./usr/local/bin/ redis-cli
+
+copiarlo a /usr/bin
+
+##################################3
+
+docker exec -it redis-qkw redis-cli
+ 
+
+
+
+cd /usr/src/redis
+
+### MOVER Y ELIMINAR ARCHIVOS CON DISTINTOS NOMBRES
+
+rm -f *DAO
+
+cp *BeanLocal.java /D/2018/test *DAO.java
+
+for file in *
+do
+  tmp="${file}"   # remove the file prefix
+  mv "$file" "${tmp/BeanLocal.java/DAO.java}"  # replace 'BeanLocal.java' with 'DAO.java'
+done
+
+
+for file in *
+do
+  tmp="${file}"   # remove the file prefix
+  mv "$file" "${tmp/DAO.java/Service.java}"  # replace 'DAO.java' with 'Service.java'
+done
+
+
+for file in *
+do
+  tmp="${file}"   # remove the file prefix
+  mv "$file" "${tmp/Bean.java/Service.java}"  # replace '.java' with 'Service.java'
+done
+
+
+for file in *
+do
+  tmp="${file}"   # remove the file prefix
+  mv "$file" "${tmp/.java/Service.java}"  # replace '.java' with 'Service.java'
+done
+
+for file in *
+do
+  tmp="${file}"   # remove the file prefix
+  mv "$file" "${tmp/Service.java/Controller.java}"  # replace 'Service.java' with 'Controller.java'
+done
+
+
+
+
+########
+
+EJEMPLO
+
+@RequestMapping.+
+
+@PathVariable\([^\s]+
+
+NO INCLUYE ESPACION EN BLANCO DESPUES DE CUALQUIER PALABRA
+
+
+NomeN has answered correctly, but this answer wouldn't be of much use for beginners like me because we will have another problem to solve and we wouldn't know how to use RegEx in there. So I am adding a bit of explanation to this. The answer is
+
+search: (\w+\.someMethod\(\))
+
+replace: ((TypeName)$1)
+
+Here:
+
+In search:
+
+First and last '(' ')' depicts a group in regex
+
+'\w' depicts words (alphanumeric+underscore)
+
+'+' depicts one or more(ie one or more of alphanumeric+underscore)
+
+'.' is a special character which depicts any character( ie .+ means one or more of any character). Because this is a special character to depict a '.' we should give an escape character with it, ie '.'
+
+'someMethod' is given as it is to be searched.
+
+The two parenthesis '(',')' are given along with escape character because they are special character which are used to depict a group (we will discuss about group in next point)
+
+In replace:
+
+It is given '((TypeName)$1)', here $1 depicts the group. That is all the characters that are enclosed within the first and last parenthesis '(' ,')' in the search field
+
+Also make sure you have checked the 'Regular expression' option in find an replace box
+
+---MICROSERVICES
+
+
+CONSUL
+
+https://hub.docker.com/r/progrium/consul/
+
+docker pull progrium/consul
+
+
+docker run -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h node1 progrium/consul -server -bootstrap
+web ui.
+docker run -p 8400:8400 -p 8500:8500 -p 8600:53/udp -h node1 progrium/consul -server -bootstrap -ui-dir /ui
+
+curl 192.168.99.100:8500/v1/catalog/nodes
+
+SPRING BOOT
+
+http://www.baeldung.com/spring-cloud-consul
+https://cloud.spring.io/spring-cloud-consul/
+
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+
+spring:
+  application:
+    name: myApp
+  cloud:
+    consul:
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}
+
+spring.cloud.consul.host=localhost
+spring.cloud.consul.port=8500
+spring.application.name=app
+spring.cloudconsul.discovery.instanceId=${spring.application.name}:${random.value}
+
+
+paso para dockerize
+cd /d/2018/workspaces/spring/demo2
+mvn package -DskipTests
+mvn docker:build
+docker run -it -p 9999:8091 demoboot | tee  /d/2018/demoboot.log
+
+
+
+docker build -t zip-nginx:1.0 -f ./Dockerfile.txt .
+
+
+docker run -it -p 8085:8085 docker-spring-boot
+-Doracle.jdbc.timezoneAsRegion=false
+docker images --filter "dangling=true"
+
+COMPOSE PRODUCCION
+
+cd /c/Users/docker/quickwin/quickwin
+
+docker build -f Dockerfile -t docker-quickwin01 .
+
+docker run --network=my_network_name -it --name cont-quickwin01 -p 8084:8084 docker-quickwin01 | tee  /d/2018/cont-quickwin01.log
+
+docker exec -it 3ea0f60ee4db /bin/bash
+404a9ce63814
+
+apt-get update
+apt-get install iputils-ping
+ 
+cd /c/Users/docker/quickwin
+
+docker-compose down
+
+docker-compose up | tee /d/2018/quickwinComposer.log 
+
+ 
+
+docker-compose up  --force-recreate --build | tee  /d/2018/quickwinComposer.log
+
+
+docker save -o /d/2018/redis_latest.tar redis:latest
+
+docker save redis:latest | gzip > /d/2018/redis/redis_latest.tar
+
+docker images --filter "dangling=true"
+docker images
+--contenedor
+docker ps  
+
+# eliminar imagenes colgadas
+docker rmi $(docker images -q --filter "dangling=true")
+
+docker export redis:latest > /d/2018/redis_latest.tar
+
+CREAR IMAGEN
+
+docker build -f Dockerfile -t docker-quickwin01 .
+
+
+docker build -t mgarcia/mykafka:1.0 .
+
+docker exec -it 404a9ce63814 /bin/bash
+
+--RABITMQ
+
+cd /c/Users/docker/RabbitMQ-Docker-cluster-master
+
+cd /c/Users/docker/rabbitmq
+
+user: guest
+password: quest
+
+http://192.168.99.100:15672/#/
+
+crear network
+docker network create rabbitmq-cluster
+eliminar 
+docker network rm rabbitmq-cluster
+listar
+docker network ls
+--ejecutar archivo compose en daemon mode
+docker-compose up -d
+ver los logs
+cocker-compose logs -f
+docker logs -f Container
+rm -f (docker ps -aq)
+
+https://github.com/bijukunjummen/si-dsl-rabbit-sample
+
+http://localhost:8081/generateWork?id=1&definition=test&throw_exception=false
+
+CAMEL
+
+https://github.com/tjsnell/camel-rabbitmq-examples/tree/master/src/main
+
+//conectarse a la consola de la maquina virtual
+docker/tcuser
+sudo -i
+sudo firewall-cmd --zone=public --add-port=3307/tcp
+sudo firewall-cmd --reload
+
